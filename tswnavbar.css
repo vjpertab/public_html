@@ -20,16 +20,16 @@
 	padding: 0 ;
 	display: block ;
 	list-style: none ;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: Arial, Helvetica, sans-serif;
 }
 #tswcssbuttons li a {
-	color: #f11500 ;
-	background-color: #202020 ;
-	border: 5px outset #ffff00 ;
+	color: #000 ;
+	background-color: #fff ;
+	border: 5px outset #000 ;
 	text-decoration: none ;
 	display: block ;
 }
 #tswcssbuttons li a:hover {
-	color: #ff90f0 ;
-	background-color: #c0c0c0 ;
+	color: #000 ;
+	background-color: #fff ;
 }
