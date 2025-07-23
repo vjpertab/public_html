@@ -67,17 +67,15 @@ function select(x, y) { /* all good! */
 }
 
 function move(x, y) { /* all good! */
-    if ((CELLS[selected_y][selected_x].innerHTML.length + CELLS[y][x].innerHTML.length) <= 7) {
+    if (CELLS[y][x].innerHTML.length < 7) {
         CELLS[y][x].innerHTML = CELLS[selected_y][selected_x].innerHTML + CELLS[y][x].innerHTML;
         CELLS[selected_y][selected_x].innerHTML = "";
         select(x, y);
     }
     else {
-        CELLS[selected_y][selected_x].classList.add("error7");
+        // Cannot break here, it's not inside a loop or switch.
     }
 }
-
-
 
 function unselect(x, y) {  /* all good! */
     let cell = CELLS[y][x];
@@ -89,10 +87,6 @@ function unselect(x, y) {  /* all good! */
 function can_move(x, y) {
     let is_next_to = Math.abs(selected_x - x) + Math.abs(selected_y - y) == 1;
     return (CELLS[y][x].innerHTML.length > 0) && ((selected_x >= 0) && (selected_y >= 0)) && is_next_to;
-}
-
-function checkForMatch(x, y) {
-    return BOARDS[0].words.find(word => word == CELLS[y][x].innerHTML);
 }
 
 function on_click(x, y) { /* all good! */
