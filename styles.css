@@ -86,3 +86,7 @@ img {
 	transform: rotate3d(4, 1, 3, calc(var(--rotation) * 2.25));
 	filter: sepia(192%);
 }
+
+#tiny {
+	font-size: small;
+}

@@ -1,0 +1,33 @@
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cell-holder {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    aspect-ratio: 1 / 1;
+    width: 50%;
+    gap: 8px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    background: #aaa;
+    border-radius:  15px;
+    overflow-wrap: anywhere;
+}
+
+.cell.selected {
+    border: 4px yellow solid;
+}
+
+h1 {
+    margin: 0;
+}
