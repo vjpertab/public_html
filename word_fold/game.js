@@ -48,35 +48,35 @@ function set_board_num(num) {
             unselect(i, j);
         }
     }
-    document.getElementById("cell_1").remove("error7");
-    document.getElementById("cell_2").remove("error7");
-    document.getElementById("cell_3").remove("error7");
-    document.getElementById("cell_4").remove("error7");
-    document.getElementById("cell_5").remove("error7");
-    document.getElementById("cell_6").remove("error7");
-    document.getElementById("cell_7").remove("error7");
-    document.getElementById("cell_8").remove("error7");
-    document.getElementById("cell_9").remove("error7");
-    document.getElementById("cell_10").remove("error7");
-    document.getElementById("cell_11").remove("error7");
-    document.getElementById("cell_12").remove("error7");
-    document.getElementById("cell_13").remove("error7");
-    document.getElementById("cell_14").remove("error7");
-    document.getElementById("cell_15").remove("error7");
-    document.getElementById("cell_16").remove("error7");
-    document.getElementById("cell_17").remove("error7");
-    document.getElementById("cell_18").remove("error7");
-    document.getElementById("cell_19").remove("error7");
-    document.getElementById("cell_20").remove("error7");
-    document.getElementById("cell_21").remove("error7");
-    document.getElementById("cell_22").remove("error7");
-    document.getElementById("cell_23").remove("error7");
-    document.getElementById("cell_24").remove("error7");
-    document.getElementById("cell_25").remove("error7");
     document.getElementById("words").innerHTML = "Words to spell: " + BOARDS[BOARD_NUMBER].words.join(", ");
     words_found = 0;
     document.getElementById("win_lose_text").classList.remove("nanana");
     document.getElementById("win_lose_text").innerHTML = "";
+    document.getElementById("cell_1").classList.remove("error7");
+    document.getElementById("cell_2").classList.remove("error7");
+    document.getElementById("cell_3").classList.remove("error7");
+    document.getElementById("cell_4").classList.remove("error7");
+    document.getElementById("cell_5").classList.remove("error7");
+    document.getElementById("cell_6").classList.remove("error7");
+    document.getElementById("cell_7").classList.remove("error7");
+    document.getElementById("cell_8").classList.remove("error7");
+    document.getElementById("cell_9").classList.remove("error7");
+    document.getElementById("cell_10").classList.remove("error7");
+    document.getElementById("cell_11").classList.remove("error7");
+    document.getElementById("cell_12").classList.remove("error7");
+    document.getElementById("cell_13").classList.remove("error7");
+    document.getElementById("cell_14").classList.remove("error7");
+    document.getElementById("cell_15").classList.remove("error7");
+    document.getElementById("cell_16").classList.remove("error7");
+    document.getElementById("cell_17").classList.remove("error7");
+    document.getElementById("cell_18").classList.remove("error7");
+    document.getElementById("cell_19").classList.remove("error7");
+    document.getElementById("cell_20").classList.remove("error7");
+    document.getElementById("cell_21").classList.remove("error7");
+    document.getElementById("cell_22").classList.remove("error7");
+    document.getElementById("cell_23").classList.remove("error7");
+    document.getElementById("cell_24").classList.remove("error7");
+    document.getElementById("cell_25").classList.remove("error7");
 }
 
 function setup_game(board) { /* all good! */

@@ -12,13 +12,22 @@ body { /* all good! */
     aspect-ratio: 1 / 1;
     width: 50%;
     gap: 8px;
+    --text: #000;
+    --fill: #fff;
+    --border: var(--text);
+    --error: #f00;
+    fill: var(--fill);
+    color: var(--text);
+    border: var(--border) ridge 4px;
 }
+
 :root {
     --text: #000;
     --fill: #fff;
-    --border: #000;
+    --border: var(--text);
     --error: #f00;
 }
+
 .cell { /* all good! */
     display: flex;
     justify-content: center;
@@ -113,7 +122,6 @@ h1 {  /* all good! */
     width: 50%;
     gap: 8px;
     color:#f00;
-    background-color:#00f;
     border-radius: 10px;
 }
 
@@ -125,7 +133,6 @@ h1 {  /* all good! */
     width: 50%;
     gap: 8px;
     color:#f00;
-    background-color:#000;
     border-radius: 10px;
 }
 
@@ -137,6 +144,5 @@ h1 {  /* all good! */
     width: 50%;
     gap: 8px;
     color:#0ff;
-    background-color:#000;
     border-radius: 10px;
 }
