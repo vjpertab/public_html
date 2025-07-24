@@ -19,15 +19,15 @@ body { /* all good! */
     justify-content: center;
     align-items: center;
     font-size: xx-large;
-    color: #0f0;
-    background-color: purple;
+    color: #000;
+    background-color: #fff;
     border-radius:  15px;
-    border: #0f0 ridge 4px;
+    border: #000 ridge 4px;
     overflow-wrap: anywhere;
 }
 
 .cell.selected { /* all good! */
-    border: #0f0 ridge 10px;
+    border: #000 ridge 10px;
 }
 
 h1 {  /* all good! */
@@ -38,3 +38,88 @@ h1 {  /* all good! */
     border: #f00 ridge 10px;
 }
 
+#win_lose_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.winOrLose.nanana {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #f00;
+    font-size: xx-large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#board1 {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    font-size: larger;
+    color:#f00;
+    background-color:#00f;
+    border-radius: 10px;
+}
+
+#board2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: larger;
+    color:#f00;
+    background-color:#000;
+    border-radius: 10px;
+}
+
+#board3 {
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    flex-direction: column;
+    font-size: larger;
+    color:#0ff;
+    background-color:#000;
+    border-radius: 10px;
+}
+
+.board1 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    aspect-ratio: 1 / 1;
+    width: 50%;
+    gap: 8px;
+    color:#f00;
+    background-color:#00f;
+    border-radius: 10px;
+}
+
+.board2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    aspect-ratio: 1 / 1;
+    width: 50%;
+    gap: 8px;
+    color:#f00;
+    background-color:#000;
+    border-radius: 10px;
+}
+
+.board3 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    aspect-ratio: 1 / 1;
+    width: 50%;
+    gap: 8px;
+    color:#0ff;
+    background-color:#000;
+    border-radius: 10px;
+}

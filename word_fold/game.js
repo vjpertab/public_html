@@ -40,6 +40,15 @@ function make_cell_list() { /* all good! */
 const CELLS = make_cell_list();
 console.log(CELLS);
 
+function set_board_num(num) {
+    BOARD_NUMBER = num;
+    setup_game(BOARDS[BOARD_NUMBER].cells);
+    document.getElementById("words").innerHTML = "Words to spell: " + BOARDS[BOARD_NUMBER].words.join(", ");
+    words_found = 0;
+    document.getElementById("win_lose_text").classList.remove("nanana");
+    document.getElementById("win_lose_text").innerHTML = "";
+}
+
 function setup_game(board) { /* all good! */
     for (let x = 0; x < 5; x++) {
         for (let y = 0; y < 5; y++) {
@@ -48,8 +57,13 @@ function setup_game(board) { /* all good! */
     }
 }
 /* all good! */
-setup_game(BOARDS[0].cells);
-document.getElementById("words").innerHTML = "Words to spell: " + BOARDS[0].words.join(", ");
+
+let BOARD_NUMBER = 0; 
+const WIN_NUMBER = 5;
+let words_found = 0;
+
+setup_game(BOARDS[BOARD_NUMBER].cells);
+document.getElementById("words").innerHTML = "Words to spell: " + BOARDS[BOARD_NUMBER].words.join(", ");
 
 let selected_x = -1;
 let selected_y = -1;
@@ -77,8 +91,6 @@ function move(x, y) { /* all good! */
     }
 }
 
-
-
 function unselect(x, y) {  /* all good! */
     let cell = CELLS[y][x];
     selected_x = -1;
@@ -92,7 +104,7 @@ function can_move(x, y) {
 }
 
 function checkForMatch(x, y) {
-    return BOARDS[0].words.find(word => word == CELLS[y][x].innerHTML);
+    return BOARDS[BOARD_NUMBER].words.find(word => word == CELLS[y][x].innerHTML);
 }
 
 function on_click(x, y) { /* all good! */
@@ -101,8 +113,22 @@ function on_click(x, y) { /* all good! */
     }
     else if (can_move(x, y)) {
         move(x, y);
+        if(checkForMatch(x, y)) {
+            words_found++;
+            if(words_found == WIN_NUMBER) {
+                document.getElementById("win_lose_text").classList.add("nanana");
+                document.getElementById("win_lose_text").innerHTML = "You won!";
+            }
+        }
     }
     else {
         select(x, y);
+        if(checkForMatch(x, y)) {
+            words_found++;
+            if(words_found == WIN_NUMBER) {
+                document.getElementById("win_lose_text").classList.add("nanana");
+                document.getElementById("win_lose_text").innerHTML = "You won!";
+            }
+        }
     }
 }

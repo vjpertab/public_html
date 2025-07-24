@@ -12,7 +12,7 @@
   <div class="header">
     <h1>Word Fold</h1>
   </div>
-  <div id="cell-holder">
+  <div id="cell-holder" class="board1">
     <div class="cell" onclick="on_click(0,0)"></div>
     <div class="cell" onclick="on_click(1,0)"></div>
     <div class="cell" onclick="on_click(2,0)"></div>
@@ -39,8 +39,11 @@
     <div class="cell" onclick="on_click(3,4)"></div>
     <div class="cell" onclick="on_click(4,4)"></div>
   </div>
-  <div class="win_lose_text"><h2></h2></div>
+  <div class = "winOrLose" id="win_lose_text"></div>
   <div class="header" id="words"></div>
+  <button id="board1" onclick="set_board_num(0)">Board 1</button>
+  <button id="board2" onclick="set_board_num(1)">Board 2</button>
+  <button id="board3" onclick="set_board_num(2)">Board 3</button>
 </body>
 
 </html>

@@ -12,7 +12,7 @@
 
 3. Add or subtract rules
     - word length cannot exceed 7 // done
-    - check for a win or lose 
+    - check for a win or lose // done
     - score?
     - can now move into empty squares
     - other rules?
