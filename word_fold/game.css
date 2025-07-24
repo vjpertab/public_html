@@ -27,7 +27,7 @@ body { /* all good! */
 }
 
 .cell.selected { /* all good! */
-    border: #000 ridge 10px;
+    border: inherit ridge 10px;
 }
 
 h1 {  /* all good! */
