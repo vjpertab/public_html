@@ -43,6 +43,36 @@ console.log(CELLS);
 function set_board_num(num) {
     BOARD_NUMBER = num;
     setup_game(BOARDS[BOARD_NUMBER].cells);
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            unselect(i, j);
+        }
+    }
+    document.getElementById("cell_1").remove("error7");
+    document.getElementById("cell_2").remove("error7");
+    document.getElementById("cell_3").remove("error7");
+    document.getElementById("cell_4").remove("error7");
+    document.getElementById("cell_5").remove("error7");
+    document.getElementById("cell_6").remove("error7");
+    document.getElementById("cell_7").remove("error7");
+    document.getElementById("cell_8").remove("error7");
+    document.getElementById("cell_9").remove("error7");
+    document.getElementById("cell_10").remove("error7");
+    document.getElementById("cell_11").remove("error7");
+    document.getElementById("cell_12").remove("error7");
+    document.getElementById("cell_13").remove("error7");
+    document.getElementById("cell_14").remove("error7");
+    document.getElementById("cell_15").remove("error7");
+    document.getElementById("cell_16").remove("error7");
+    document.getElementById("cell_17").remove("error7");
+    document.getElementById("cell_18").remove("error7");
+    document.getElementById("cell_19").remove("error7");
+    document.getElementById("cell_20").remove("error7");
+    document.getElementById("cell_21").remove("error7");
+    document.getElementById("cell_22").remove("error7");
+    document.getElementById("cell_23").remove("error7");
+    document.getElementById("cell_24").remove("error7");
+    document.getElementById("cell_25").remove("error7");
     document.getElementById("words").innerHTML = "Words to spell: " + BOARDS[BOARD_NUMBER].words.join(", ");
     words_found = 0;
     document.getElementById("win_lose_text").classList.remove("nanana");
@@ -58,7 +88,7 @@ function setup_game(board) { /* all good! */
 }
 /* all good! */
 
-let BOARD_NUMBER = 0; 
+let BOARD_NUMBER = 0;
 const WIN_NUMBER = 5;
 let words_found = 0;
 
@@ -113,9 +143,9 @@ function on_click(x, y) { /* all good! */
     }
     else if (can_move(x, y)) {
         move(x, y);
-        if(checkForMatch(x, y)) {
+        if (checkForMatch(x, y)) {
             words_found++;
-            if(words_found == WIN_NUMBER) {
+            if (words_found == WIN_NUMBER) {
                 document.getElementById("win_lose_text").classList.add("nanana");
                 document.getElementById("win_lose_text").innerHTML = "You won!";
             }
@@ -123,9 +153,9 @@ function on_click(x, y) { /* all good! */
     }
     else {
         select(x, y);
-        if(checkForMatch(x, y)) {
+        if (checkForMatch(x, y)) {
             words_found++;
-            if(words_found == WIN_NUMBER) {
+            if (words_found == WIN_NUMBER) {
                 document.getElementById("win_lose_text").classList.add("nanana");
                 document.getElementById("win_lose_text").innerHTML = "You won!";
             }

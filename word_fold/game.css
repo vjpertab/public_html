@@ -13,21 +13,26 @@ body { /* all good! */
     width: 50%;
     gap: 8px;
 }
-
+:root {
+    --text: #000;
+    --fill: #fff;
+    --border: #000;
+    --error: #f00;
+}
 .cell { /* all good! */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: xx-large;
-    color: #000;
-    background-color: #fff;
+    color: var(--text);
+    background-color: var(--fill);
     border-radius:  15px;
-    border: #000 ridge 4px;
+    border: var(--border) ridge 4px;
     overflow-wrap: anywhere;
 }
 
 .cell.selected { /* all good! */
-    border: inherit ridge 10px;
+    border: var(--border) ridge 10px;
 }
 
 h1 {  /* all good! */
@@ -35,7 +40,7 @@ h1 {  /* all good! */
 }
 
 .cell.error7, .cell.selected.error7 {
-    border: #f00 ridge 10px;
+    border: var(--error) ridge 10px;
 }
 
 #win_lose_text {
@@ -56,28 +61,40 @@ h1 {  /* all good! */
 }
 
 #board1 {
+    --text: #f20;
+    --fill: #00f;
+    --border: #f20;
+    --error: #f00;
     display: flex;
     align-items: left;
     justify-content: center;
     flex-direction: column;
     font-size: larger;
-    color:#f00;
+    color:#f20;
     background-color:#00f;
     border-radius: 10px;
 }
 
 #board2 {
+    --text: #f20;
+    --fill: #000;
+    --border: #f20;
+    --error: #f00;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     font-size: larger;
-    color:#f00;
+    color:#f20;
     background-color:#000;
     border-radius: 10px;
 }
 
 #board3 {
+    --text: #0ff;
+    --fill: #000;
+    --border: #0ff;
+    --error: #f00;
     display: flex;
     align-items: right;
     justify-content: center;
