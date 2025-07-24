@@ -2,7 +2,7 @@ let widget_container = document.getElementById("widget-container");
 let score_element = document.getElementById("score");
 let stores = document.getElementsByClassName("store");
 
-let score = Math.pow(2,4) - 1;
+let score = 5;
 let super_gompei_count = 0;
 
 function changeScore(amount) {
@@ -25,6 +25,16 @@ function buy(store) {
         return;
     }
     changeScore(-cost);
+
+    let super_gompei = document.querySelector("#widget-container #super-gompei")?.parentElement;
+    if(store.getAttribute("name") == "Super-Gompei" && super_gompei != null) {
+        let old_reap = parseInt(super_gompei.getAttribute("reap"));
+        super_gompei.setAttribute("reap",old_reap + 100);
+        super_gompei_count++;
+        document.body.style = "--gompei-count: " + super_gompei_count;
+        return;
+    }
+
     let new_widget = store.firstElementChild.cloneNode(true);
 
     new_widget.onclick = () => {
@@ -40,7 +50,7 @@ function buy(store) {
 
 function setup_end_harvest(widget) {
     setTimeout(() => {       
-        new_widget.removeAttribute("harvesting");
+        widget.removeAttribute("harvesting");
         if(widget.getAttribute("auto") == "true") {
             harvest(widget);
         }
@@ -55,5 +65,17 @@ function harvest(widget) {
 
     changeScore(parseInt(widget.getAttribute("reap")));
 
+    givePoints(widget);
+
     setup_end_harvest(widget);
+}
+
+function givePoints(widget) {
+    let points_element = document.createElement("span");
+    points_element.className = "point";
+    points_element.innerHTML = "+" + widget.getAttribute("reap");
+    points_element.onanimationend = () => {
+        points_element.remove();
+    }
+    widget.appendChild(points_element);
 }
