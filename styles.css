@@ -12,6 +12,18 @@ img {
 	height: auto;
 }
 
+a.mystuff {
+	/* I just think it's neat that it says "dead"... */
+	color: calc(hsl(var(--rotation), 100%, 50%) - #00dead);
+	text-align: center;
+	text-decoration: underline;
+	font-size: larger;
+	font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+bdo {
+	/* I just think it's neat that it says "dead"... */
+	color: calc(hsl(var(--rotation), 100%, 50%) - #00dead);
+}
 input,
 select,
 button,

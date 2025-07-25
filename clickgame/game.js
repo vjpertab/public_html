@@ -27,9 +27,9 @@ function buy(store) {
     changeScore(-cost);
 
     let super_gompei = document.querySelector("#widget-container #super-gompei")?.parentElement;
-    if(store.getAttribute("name") == "Super-Gompei" && super_gompei != null) {
+    if (store.getAttribute("name") == "Super-Gompei" && super_gompei != null) {
         let old_reap = parseInt(super_gompei.getAttribute("reap"));
-        super_gompei.setAttribute("reap",old_reap + 100);
+        super_gompei.setAttribute("reap", old_reap + 100);
         super_gompei_count++;
         document.body.style = "--gompei-count: " + super_gompei_count;
         return;
@@ -42,26 +42,26 @@ function buy(store) {
     }
     widget_container.appendChild(new_widget);
 
-    if(new_widget.getAttribute("auto") == "true") { 
+    if (new_widget.getAttribute("auto") == "true") {
         new_widget.setAttribute("harvesting", "");
         setup_end_harvest(new_widget);
     }
 }
 
 function setup_end_harvest(widget) {
-    setTimeout(() => {       
+    setTimeout(() => {
         widget.removeAttribute("harvesting");
-        if(widget.getAttribute("auto") == "true") {
+        if (widget.getAttribute("auto") == "true") {
             harvest(widget);
         }
     }, parseFloat(widget.getAttribute("cooldown")) * 1000);
 }
 
 function harvest(widget) {
-    if(widget.hasAttribute("harvesting")) {
+    if (widget.hasAttribute("harvesting")) {
         return;
     }
-    widget.setAttribute("harvesting","");
+    widget.setAttribute("harvesting", "");
 
     changeScore(parseInt(widget.getAttribute("reap")));
 
