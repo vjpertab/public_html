@@ -1,6 +1,5 @@
 let angle = 0;
 let d_theta = (Math.random() * 4) + 1;
-let dh = (Math.random() * 361) + 1; // random # from 1 to 360...hopefully
 
 function onFrame() {
     d_theta = (Math.random() * 4) + 1;

@@ -18,6 +18,10 @@ img {
 	height: auto;
 }
 
+#bottom_coin {
+	transform: rotate3d(1, 4, 2);
+}
+
 a.mystuff {
 	/* I just think it's neat that it says "dead"... */
 	color: calc(hsl(var(--rotation), 100%, 50%) - #00dead);

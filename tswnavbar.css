@@ -39,4 +39,6 @@
 #tswcssbuttons li a:hover {
 	color: #fff;
 	background-color: inherit;
+	text-decoration: underline;
 }
+
