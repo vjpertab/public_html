@@ -110,9 +110,9 @@ class AICookApp {
             prompt += ` Make it ${dietary}.`;
         }
         if (cuisine) {
-            prompt += ` The cuisine style should be ${cuisine}.`;
+            prompt += ` The cuisine style should be ${cuisine}. `;
         }
-
+        
         prompt += `
         
         Please format your response as follows:
