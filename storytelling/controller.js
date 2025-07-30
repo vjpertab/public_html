@@ -1,27 +1,27 @@
-import Model, * as model from './Model.js';
-import View, * as view from './View.js';
+import Model from './model.js';
+import View from './view.js';
 
-const recognition = new (window.SpeechRecognition) || new (window.webkitSpeechRecognition)();
+const recognition = new webkitSpeechRecognition();
 recognition.lang = Model.getLanguage().lang;
 
 let aiRequestInProgress = false;
 
 async function handleVoiceInput(event) {
-    const userText = event.result[0][0].transcript;
+    const userText = event.results[0][0].transcript;
     const updateStory = Model.appendLine("Player", userText);
 
-    view.toggleLoading(true);
+    View.toggleLoading(true);
     aiRequestInProgress = true;
 
     const aiResponse = await Model.generateStory(updateStory + "\nNarrator: ");
     aiRequestInProgress = false;
 
-    view.toggleLoading(false);
+    View.toggleLoading(false);
 
     const finalStory = Model.appendLine("Narrator", aiResponse);
-    view.updateStory(finalStory);
+    View.updateStory(finalStory);
 
-    view.speakText(aiResponse, Model.getLanguage().lang);
+    View.speakText(aiResponse, Model.getLanguage().lang);
 }
 
 function handleLanguageChange() {
@@ -35,7 +35,7 @@ function handleLanguageChange() {
 function handleStopSpeaking() {
     View.stopSpeaking();
     if (aiRequestInProgress) {
-        view.toggleLoading(false);
+        View.toggleLoading(false);
         aiRequestInProgress = false;
     }
 
@@ -77,11 +77,11 @@ function init() {
         aiRequestInProgress = false;
     };
 
-    View.getLanguageSelect().addEventListener("change", handleLanguageChange());
+    View.getLanguageSelect().addEventListener("change", handleLanguageChange);
 
-    View.getStopSpeakBtn().onclick = handleStopSpeaking();
+    View.getStopSpeakBtn().onclick = handleStopSpeaking;
 
-    View.getPauseSpeakButton().onclick = handlePauseAndResume();
+    View.getPauseSpeakButton().onclick = handlePauseAndResume;
 }
 
 init();
