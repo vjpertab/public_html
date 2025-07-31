@@ -39,8 +39,8 @@ export class Model {
     }
 
     resetBall() {
-        let velx = Math.ceil(Math.random() * 3) * 2 - 1;
-        let vely = Math.ceil(Math.random() * 3) * 2 - 1;
+        let velx = Math.ceil(Math.random() * 3) * 2;
+        let vely = Math.ceil(Math.random() * 3) * 2;
         this.ball = new Ball(BOARD_WIDTH / 2, BOARD_HEIGHT / 2, velx, vely);
     }
 

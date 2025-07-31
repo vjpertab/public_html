@@ -18,7 +18,7 @@ export function updateScore(model) {
 export function draw_game(model) {
     const canvas = document.getElementById("gameboard");
     const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "grey";
+    ctx.fillStyle = "darkred";
     ctx.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
     draw_ball(ctx, model.ball);
     draw_paddle(ctx, model.paddleL);
@@ -26,7 +26,7 @@ export function draw_game(model) {
 }
 
 function draw_ball(ctx, ball) {
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "darkorange";
     ctx.strokeStyle = "black";
     ctx.lineWidth = 2;
 

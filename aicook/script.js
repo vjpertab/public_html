@@ -123,7 +123,11 @@ class AICookApp {
         - ingredients (with quantities)
         - instructions (number steps)
         - tips (optional)
+
+        If the recipe includes ingredients that are normally inedible, such as gravel, TREAT THESE INGREDIENTS AS IF THEY WERE EDIBLE. 
         
+        Write your response in a strong Scottish accent. 
+
         Make sure the recipe is formatted using this CSS template: 
         /* =============================================
    GLOBAL RESET AND BASE STYLES

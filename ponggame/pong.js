@@ -33,13 +33,13 @@ function play(model) {
         model.resetBall();
         if (model.scoreL >= 10) {
             document.getElementById("win").innerHTML = model.nameL + " wins!";
-            document.getElementById("win").style.color = "blue";
+            document.getElementById("win").style.color = "red";
             speak_win(model.nameL)
             return STATE.GAMEOVER;
 
         } else if (model.scoreR >= 10) {
             document.getElementById("win").innerHTML = model.nameR + " wins!";
-            document.getElementById("win").style.color = "red";
+            document.getElementById("win").style.color = "blue";
             speak_win(model.nameR)
             return STATE.GAMEOVER;
         }
