@@ -26,7 +26,7 @@ export function draw_game(model) {
 }
 
 function draw_ball(ctx, ball) {
-    ctx.fillStyle = "hotpink";
+    ctx.fillStyle = "black";
     ctx.strokeStyle = "black";
     ctx.lineWidth = 2;
 
@@ -58,7 +58,7 @@ export function speak_reset() {
 }
 
 
-export function speak_hit(name) {
+export function speak_hit(name, opponent_name) {
     const hitPhrases = [
         `${name} returns the ball`,
         `Eat dirt, ${opponent_name}`,
@@ -84,7 +84,7 @@ export function speak_miss(name, opponent_name) {
         `${name} let it slip by`,
         `${opponent_name} scores`,
         `${name} missed that one`,
-        `Nice try, ${name}`
+        `Nice try, ${name}`,
         `Too fast for ${name}`,
         `${opponent_name} takes the point`,
         `In your face, ${name}`

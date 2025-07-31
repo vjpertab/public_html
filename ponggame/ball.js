@@ -27,8 +27,14 @@ export default class Ball {
             let side = thing.bounce(model, this);
             if (side != SIDE.NONE) return side;
         }
-        if (this.posx + BALL_RADIUS > BOARD_WIDTH) return SIDE.RIGHT; // Someone got a point...
-        if (this.posx + BALL_RADIUS < 0) return SIDE.LEFT; // Someone got a point...
+        if (this.posx + BALL_RADIUS > BOARD_WIDTH) {
+            play_beep();
+            return SIDE.RIGHT; // right player got a point!
+        }
+        if (this.posx + BALL_RADIUS < 0) {
+            play_beep();
+            return SIDE.LEFT; // left player got a point!
+        } 
 
         return SIDE.NONE;
     }

@@ -38,7 +38,11 @@ export default class Paddle {
             ball.posx - BALL_RADIUS <= this.posx + this.width && ball.posx + BALL_RADIUS >= this.posx &&  // within x 
             ball.velx * bounce_dir < 0 // ball going into wall
         ) {
-            speak_hit(this.side == SIDE.LEFT ? model.nameL : model.nameR)
+            if (this.side == SIDE.LEFT) {
+                speak_hit(model.nameL, model.nameR);
+            } else {
+                speak_hit(model.nameR, model.nameL);
+            }
             ball.velx = bounce_dir * PADDLE_FORCE * Math.abs(ball.velx);
             return SIDE.NONE;
         }
